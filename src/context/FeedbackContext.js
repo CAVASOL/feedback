@@ -28,7 +28,7 @@ export const FeedbackProvider = ({ children }) => {
   const addFeedback = async (newFeedback) => {
     const response = await fetch('/feedback', {
       method: 'POST',
-      header: {
+      headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(newFeedback),
@@ -50,7 +50,7 @@ export const FeedbackProvider = ({ children }) => {
   const updateFeedback = async (id, updItem) => {
     const response = await fetch(`/feedback/${id}`, {
       method: 'PUT',
-      header: {
+      headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(updItem)
@@ -58,7 +58,12 @@ export const FeedbackProvider = ({ children }) => {
 
     const data = await response.json()
 
-    setFeedback(feedback.map((item) => item.id === id ? { ...item, ...updItem } : item))
+    setFeedback(feedback.map((item) => (item.id === id ? data : item)))
+
+    setFeedbackEdit({
+      item: {},
+      edit: false,
+    })
   }
 
   const editFeedback = (item) => {
