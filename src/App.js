@@ -18,13 +18,19 @@ function App() {
         <Header />
         <div className='container'>
           <Routes>
-            <Route exact path='/'>
-              <FeedbackForm />
-              <FeedbackStats />
-              <FeedbackList />
-            </Route>
+            <Route
+              exact
+              path='/'
+              element={
+                <>
+                  <FeedbackForm />
+                  <FeedbackStats />
+                  <FeedbackList />
+                </>
+              }
+            ></Route>
 
-            <Route path='/about' component={AboutPage} />
+            <Route path='/about' element={<AboutPage />} />
           </Routes>
 
           <AboutIconLink />
@@ -33,6 +39,8 @@ function App() {
     </FeedbackProvider>
   )
 }
+
+export default App
 
 // function App() {
 //   const title = 'Blog Post'
@@ -76,5 +84,3 @@ function App() {
 //     React.createElement('h1', {}, 'My App')
 //   )
 // }
-
-export default App

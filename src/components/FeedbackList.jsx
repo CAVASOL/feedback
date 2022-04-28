@@ -25,15 +25,23 @@ function FeedbackList() {
             exit={{ opacity: 0 }}
             layout
           >
-            <FeedbackItem
-              key={item.id}
-              item={item}
-            />
+            <FeedbackItem key={item.id} item={item} />
           </motion.div>
         ))}
       </AnimatePresence>
     </div>
   )
+
+  // return (
+  //   <div className='feedback-list'>
+  //     {feedback.map((item) => (
+  //       <FeedbackItem key={item.id} item={item} handleDelete={handleDelete} />
+  //     ))}
+  //   </div>
+  // )
+}
+
+export default FeedbackList
 
   // return (
   //   <div className='feedback-list'>
@@ -46,7 +54,3 @@ function FeedbackList() {
   //     ))}
   //   </div>
   // )
-}
-
-
-export default FeedbackList
