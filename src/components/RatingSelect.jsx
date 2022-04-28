@@ -4,7 +4,6 @@ function RatingSelect({ select, selected }) {
     select(+e.currentTarget.value)
   }
 
-  // NOTE: simplified with iteration
   return (
     <ul className='rating'>
       {Array.from({ length: 10 }, (_, i) => (
