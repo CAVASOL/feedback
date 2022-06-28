@@ -2,7 +2,7 @@
 
 React app for reviews including rating
 
-<img align="center" src="./feedbackui.png" width="800px" />
+<img align="center" src="./feedbackui.png" width="400px" />
 
 ## Run Server
 
